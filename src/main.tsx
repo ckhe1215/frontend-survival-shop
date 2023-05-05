@@ -1,6 +1,11 @@
+import { ThemeProvider } from 'styled-components';
+import { Reset } from 'styled-reset';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-import App from './App';
+import defaultTheme from './styles/defaultTheme';
+import GlobalStyle from './styles/GlobalStyle';
+import routes from './routes';
 
 function main() {
   const container = document.getElementById('root');
@@ -9,7 +14,17 @@ function main() {
   }
 
   const root = ReactDOM.createRoot(container);
-  root.render(<App />);
+  const router = createBrowserRouter(routes);
+
+  root.render(
+    <React.StrictMode>
+      <ThemeProvider theme={defaultTheme}>
+        <Reset />
+        <GlobalStyle />
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </React.StrictMode>,
+  );
 }
 
 main();

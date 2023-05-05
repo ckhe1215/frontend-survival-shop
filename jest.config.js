@@ -1,8 +1,8 @@
 module.exports = {
   testEnvironment: 'jsdom',
-  // setupFilesAfterEnv: [
-  //   '<rootDir>/src/setupTests.ts',
-  // ],
+  setupFilesAfterEnv: [
+    '<rootDir>/src/setupTests.ts',
+  ],
   transform: {
     '^.+\\.(t|j)sx?$': ['@swc/jest', {
       jsc: {
