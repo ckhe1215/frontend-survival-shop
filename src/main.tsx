@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom/client';
 import defaultTheme from './styles/defaultTheme';
 import GlobalStyle from './styles/GlobalStyle';
 import routes from './routes';
+import 'reflect-metadata';
 
 function main() {
   const container = document.getElementById('root');
