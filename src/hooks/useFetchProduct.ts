@@ -1,17 +1,17 @@
-import { container } from 'tsyringe';
-import { useStore } from 'usestore-ts';
 import { useEffect } from 'react';
+import useProductDetailStore from './useProductDetailStore';
 
 export default function useFetchProduct({ productId } : {
-  productId?: string;
-}) {
-  const store = container.resolve(ProductStore);
-
-  const [{ loading, error }] = useStore(store);
+  productId: string;
+}): {
+  loading: boolean;
+  error: boolean;
+} {
+  const [{ loading, error }, store] = useProductDetailStore();
 
   useEffect(() => {
-    store.fetchProducts({ productId });
-  }, [store]);
+    store.fetchProduct({ productId });
+  }, [store, productId]);
 
   return { loading, error };
 }

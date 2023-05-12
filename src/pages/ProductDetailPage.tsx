@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import useFetchProduct from '../hooks/useFetchProduct';
+import ProductDetail from '../components/ProductDetail';
 
 function ProductDetailPage() {
   const params = useParams();
