@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import useProductDetailStore from '../hooks/useProductDetailStore';
-import Images from './Images';
+import useProductDetailStore from '../../hooks/useProductDetailStore';
+import Images from '../Images';
 import Description from './Description';
+import AddToCartForm from './form/AddToCartForm';
 
 const Container = styled.div`
   display: flex;
@@ -15,14 +16,6 @@ const Container = styled.div`
     width: 60%;
   }
 `;
-
-function AddToCartForm() {
-  return (
-    <div>
-      장바구니에 상품 담기
-    </div>
-  );
-}
 
 export default function ProductDetailView() {
   const [{ product }] = useProductDetailStore();
